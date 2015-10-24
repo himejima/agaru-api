@@ -1,0 +1,9 @@
+@(message: String, data: List[Music])
+
+@main("Welcome to Play") {
+    <h1>@message</h1>
+    @for(obj:Music <- data){
+        @obj.id <br />
+        @obj.url <br />
+    }
+}

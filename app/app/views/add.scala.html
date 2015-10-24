@@ -1,0 +1,9 @@
+@(message: String, form1: Form[Music])
+
+@main("test") {
+    <h1>@message</h1>
+    @helper.form(action = routes.Application.create) {
+        @helper.inputText(form1("url"))
+        <input type="submit" />
+    }
+}

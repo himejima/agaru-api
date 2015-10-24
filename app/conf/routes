@@ -1,0 +1,25 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET     /                           controllers.Application.index
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.at(path="/public", file)
+
+### # Create
+POST    /v1/music                   controllers.Application.create
+### # Delete
+### POST    /v1/music                   controllers.Application.index
+### # Update
+### POST    /v1/music                   controllers.Application.index
+### # Read
+GET    /v1/music                    controllers.Application.read
+### GET     /v1/music/:team/:year/:id           controllers.Application.index
+### GET     /v1/music/:team/:year/:playerid     controllers.Application.index
+### GET     /v1/music/:team/:year/:list         controllers.Application.index
+
+# Demo
+GET    /add                  controllers.Application.add
+GET    /demo                 controllers.Application.demo
