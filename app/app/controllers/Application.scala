@@ -59,7 +59,17 @@ object Application extends Controller {
 
   def update = TODO
 
-  def delete = TODO
+  def delete (id: Long) = Action {
+    Logger.info(id.toString)
+
+    val test = Music.delete(id)
+    Logger.info(test.toString)
+
+    val json = Map(
+      "code" -> Json.toJson(200)
+    )
+    Ok(Json.toJson(json))
+  }
 
   def read = Action {
     val data:List[Music] = Music.all

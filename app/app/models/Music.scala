@@ -29,6 +29,11 @@ object Music {
       val datas = SQL("Select * from music").as(Music.data *)
       return datas
     }
-
+  }
+  def delete(id: Long): Int = {
+    DB.withConnection { implicit c =>
+      val target_id: Int = SQL("delete from music where id = {id}").on('id->id).executeUpdate()
+      return target_id
+    }
   }
 }
